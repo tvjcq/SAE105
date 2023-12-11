@@ -1,3 +1,7 @@
+/* TODO mieux organiser le CSS srx la c degueu */
+
+/***************** Eléments principaux (page à 100% de l'écran, scroll smooth, couleur du texte et fond) *****************/
+
 body,
 html {
   height: 100%;
@@ -13,10 +17,18 @@ body {
   color: #252525;
 }
 
+/************************************************************************************************************************/
+
+/***************** Titre *****************/
+
 h1 {
   text-align: center;
   font-size: 50px;
 }
+
+/*****************************************/
+
+/***************** Bouton "Comment ça marche ?" *****************/
 
 .boutoninfo {
   position: relative;
@@ -38,6 +50,10 @@ h1 {
   box-shadow: 2px 2px 30px #252525;
 }
 
+/***************************************************************/
+
+/***************** Le texte explicatif de chaque salles et explication de la navigation *****************/
+
 .info {
   width: 600px;
 }
@@ -46,7 +62,7 @@ h1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 500px;
+  margin-top: 500px; /* ! Changer ça */
 }
 
 .infoflex h2 {
@@ -56,6 +72,10 @@ h1 {
 .infoflex p {
   font-size: 20px;
 }
+
+/********************************************************************************************************/
+
+/***************** Le bouton permettant de rentrer *****************/
 
 .bouton,
 .bouton-image {
@@ -70,12 +90,18 @@ h1 {
 .bouton-image {
   border: 1px red solid;
   transition: 0.2s ease-in-out;
-  transform: rotate(-90deg);
+  transform: rotate(
+    -90deg
+  ); /* ! Supprimer ça si l'image est dans le bon sens */
 }
 
 .bouton-image:hover {
-  transform: scale(1.1) rotate(-90deg);
+  transform: scale(1.1) rotate(-90deg); /* ! Ici aussi */
 }
+
+/********************************************************************/
+
+/***************** L'image de navigation *****************/
 
 #visite {
   background-image: url(assets/devanture.png);
@@ -90,3 +116,5 @@ h1 {
   border-radius: 50px;
   box-shadow: 0 0 20px 5px #a7a7a7;
 }
+
+/**********************************************************/
