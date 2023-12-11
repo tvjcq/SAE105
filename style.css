@@ -4,8 +4,12 @@ html {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #cee6f9;
+  background-color: #e8e8e8;
 }
 
 h1 {
@@ -13,14 +17,43 @@ h1 {
   font-size: 50px;
 }
 
-.info {
+.boutoninfo {
+  position: relative;
   text-decoration: none;
-  color: black;
-  border: 5px black solid;
+  color: #252525;
+  border: 5px #252525 solid;
   padding: 10px;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 65px;
+  top: 35px;
+  left: 20px;
   font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.boutoninfo:hover {
+  background-color: #252525;
+  color: #fff;
+  box-shadow: 2px 2px 30px #252525;
+}
+
+.info {
+  width: 600px;
+}
+
+.infoflex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 500px;
+}
+
+.infoflex h2 {
+  font-size: 30px;
+}
+
+.infoflex p {
+  font-size: 20px;
 }
 
 .bouton,
@@ -49,11 +82,10 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-
   left: 50%;
   transform: translateX(-50%);
   width: 1280px;
   height: 720px;
   border-radius: 50px;
-  box-shadow: 0 0 20px 5px #899cac;
+  box-shadow: 0 0 20px 5px #a7a7a7;
 }
