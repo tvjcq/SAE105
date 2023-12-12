@@ -1,0 +1,18 @@
+#visite {
+  background-image: url(assets/scene.png);
+}
+
+#bouton1 {
+  top: 250px;
+  left: 280px;
+}
+
+#bouton1-image:hover,
+#bouton2-image:hover {
+  transform: scale(1.1);
+}
+
+#bouton2 {
+  right: 330px;
+  top: 250px;
+}
