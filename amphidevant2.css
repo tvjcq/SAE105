@@ -21,5 +21,6 @@
 #bouton3 {
   top: 400px;
   left: 550px;
-  transform: rotateX(65deg);
+  rotate: 90deg;
+  transform: rotateY(65deg);
 }
