@@ -1,0 +1,20 @@
+#visite {
+  background-image: url(assets/halldroite.png);
+  background-position: bottom;
+}
+
+#bouton1 {
+  top: 200px;
+  left: 280px;
+}
+
+#bouton2 {
+  bottom: 130px;
+  right: 350px;
+  transform: rotateX(65deg) scale(1.5);
+}
+
+#bouton2-image:hover,
+#bouton1-image:hover {
+  transform: scale(1.1);
+}

@@ -2,3 +2,7 @@
   background-image: url(assets/piano.png);
   background-position: bottom;
 }
+
+button {
+  position: absolute;
+}

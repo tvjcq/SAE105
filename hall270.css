@@ -1,0 +1,24 @@
+#visite {
+  background-image: url(assets/hall270deg.png);
+}
+
+#bouton1 {
+  bottom: 340px;
+  left: 210px;
+}
+
+#bouton2 {
+  right: 200px;
+  bottom: 270px;
+}
+
+#bouton3 {
+  right: 420px;
+  bottom: 230px;
+}
+
+#bouton1-image:hover,
+#bouton2-image:hover,
+#bouton3-image:hover {
+  transform: scale(1.1);
+}
