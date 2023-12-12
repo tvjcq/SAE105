@@ -39,27 +39,19 @@ body {
   width: 70px;
 }
 
+.bouton-image {
+  border: 1px red solid;
+  transition: 0.2s ease-in-out;
+}
+
 #bouton1,
 #bouton1image {
   bottom: 300px;
   left: 420px;
 }
 
-#bouton1-image {
-  border: 1px red solid;
-  transition: 0.2s ease-in-out;
-  transform: rotate(
-    -45deg
-  ); /* ! Supprimer ça si l'image est dans le bon sens */
-}
-
-.bouton-image {
-  border: 1px red solid;
-  transition: 0.2s ease-in-out;
-}
-
 #bouton1-image:hover {
-  transform: scale(1.1) rotate(-45deg); /* ! Ici aussi */
+  transform: scale(1.1);
 }
 
 #boutonrotategauche,
@@ -108,7 +100,7 @@ body {
 #boutonretour,
 #boutonretour-image {
   bottom: 15px;
-  left: 45%;
+  left: 43%;
   height: 100px;
   width: 100px;
 }
@@ -132,6 +124,11 @@ body {
   background-color: #252525;
   color: #fff;
   box-shadow: 2px 2px 30px #252525;
+}
+
+.boutoninfo:active {
+  border-color: #fff;
+  transition: all 0.1s linear;
 }
 
 h1 {

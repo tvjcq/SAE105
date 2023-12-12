@@ -50,6 +50,11 @@ h1 {
   box-shadow: 2px 2px 30px #252525;
 }
 
+.boutoninfo:active {
+  border-color: #fff;
+  transition: all 0.1s linear;
+}
+
 /***************************************************************/
 
 /***************** Le texte explicatif de chaque salles et explication de la navigation *****************/
