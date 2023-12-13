@@ -4,7 +4,7 @@
 
 #bouton1 {
   top: 250px;
-  left: 280px;
+  left: 500px;
 }
 
 #bouton1-image:hover,
@@ -13,6 +13,6 @@
 }
 
 #bouton2 {
-  right: 330px;
-  top: 250px;
+  right: 250px;
+  top: 300px;
 }
