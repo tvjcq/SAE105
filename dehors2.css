@@ -1,0 +1,12 @@
+#visite {
+  background-image: url(assets/dehors2.png);
+}
+
+#bouton1 {
+  top: 400px;
+  right: 470px;
+}
+
+#bouton1-image:hover {
+  transform: scale(1.1);
+}
