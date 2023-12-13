@@ -3,8 +3,10 @@
 }
 
 #bouton1 {
-  bottom: 250px;
-  left: 250px;
+  bottom: 80px;
+  left: 330px;
+  rotate: -90deg;
+  transform: rotateY(60deg);
 }
 
 #bouton1-image:hover,
@@ -16,6 +18,7 @@
 #bouton2 {
   right: 330px;
   bottom: 200px;
+  rotate: 90deg;
 }
 
 #bouton3 {

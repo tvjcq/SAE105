@@ -10,11 +10,14 @@
 #bouton2 {
   right: 200px;
   bottom: 270px;
+  rotate: 45deg;
 }
 
 #bouton3 {
   right: 420px;
-  bottom: 230px;
+  bottom: 110px;
+  rotate: 45deg;
+  transform: rotateY(-55deg) rotateX(35deg) scale(1.3);
 }
 
 #bouton1-image:hover,

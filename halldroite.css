@@ -11,7 +11,8 @@
 #bouton2 {
   bottom: 130px;
   right: 350px;
-  transform: rotateX(65deg) scale(1.5);
+  rotate: 90deg;
+  transform: rotateY(65deg) scale(1.5);
 }
 
 #bouton2-image:hover,

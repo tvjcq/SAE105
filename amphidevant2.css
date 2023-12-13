@@ -11,11 +11,13 @@
 #bouton1 {
   top: 350px;
   left: 280px;
+  rotate: -90deg;
 }
 
 #bouton2 {
   top: 350px;
   right: 300px;
+  rotate: 90deg;
 }
 
 #bouton3 {
