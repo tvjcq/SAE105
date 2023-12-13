@@ -113,6 +113,35 @@ h1 {
   transition: all 0.1s linear;
 }
 
+#info {
+  width: 50%;
+}
+
+.infoflex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.infoflex h2 {
+  font-size: 50px;
+}
+
+.infoflex p {
+  font-size: 35px;
+}
+
+#barre {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 5px;
+  background-color: #252525;
+  border-radius: 5px;
+  margin-top: 25vh;
+}
+
 #icone-maison {
   position: absolute;
   top: 33.5px;

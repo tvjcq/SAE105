@@ -1,27 +1,7 @@
 /***************** Le texte explicatif de chaque salles et explication de la navigation *****************/
 
-.info {
-  width: 50%;
-}
-
 #info {
-  padding-top: 30vh;
-}
-
-.infoflex {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 50px; /*! Changer ça */
-  margin-bottom: 800px;
-}
-
-.infoflex h2 {
-  font-size: 50px;
-}
-
-.infoflex p {
-  font-size: 35px;
+  width: 50%;
 }
 
 /********************************************************************************************************/
@@ -46,13 +26,3 @@
 }
 
 /**********************************************************/
-
-#barre {
-  margin-top: 350px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-  height: 5px;
-  background-color: #252525;
-  border-radius: 5px;
-}
