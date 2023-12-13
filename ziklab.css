@@ -1,0 +1,13 @@
+#visite {
+  background-image: url(assets/ziklab.png);
+}
+
+#bouton1 {
+  top: 280px;
+  left: 260px;
+  transform: scale(1.2);
+}
+
+#bouton1-image:hover {
+  transform: scale(1.1);
+}
