@@ -55,8 +55,31 @@
         />
       </a>
       <!-- TODO faire la partie JS qui lance les sons -->
-      <button>lancer sons</button>
+      <button id="caisse1" onclick="lancerSon(0)"></button>
+      <button id="caisse2" onclick="lancerSon(1)"></button>
+      <button id="caisse3" onclick="lancerSon(2)"></button>
+      <button id="caisse4" onclick="lancerSon(3)"></button>
+      <button id="cymbale1" onclick="lancerSon(4)"></button>
+      <button id="cymbale2" onclick="lancerSon(5)"></button>
+      <button id="cymbale3" onclick="lancerSon(6)"></button>
       <a href="#info" class="boutoninfo">Comment jouer ?</a>
     </section>
+    <script>
+      // Créez un tableau avec les objets Audio pour chaque son
+      let sons = [
+        new Audio("assets/caisse1.mp3"),
+        new Audio("assets/caisse2.mp3"),
+        new Audio("assets/caisse3.mp3"),
+        new Audio("assets/caisse4.mp3"),
+        new Audio("assets/cymbale1.mp3"),
+        new Audio("assets/cymbale2.mp3"),
+        new Audio("assets/cymbale3.mp3"),
+      ];
+
+      // Créez une fonction qui joue le son correspondant à l'index
+      function lancerSon(index) {
+        sons[index].play();
+      }
+    </script>
   </body>
 </html>

@@ -74,6 +74,8 @@
           id="boutonretour-image"
         />
       </a>
+      <p class="texteanim" id="salleferme">Oh non... Cet amphi est fermé...</p>
+      <p class="texteanim" id="salleencoreferme">Fermé j'ai dit !</p>
       <a href="#ancreinfo" class="boutoninfo">Information</a>
     </section>
 
@@ -114,5 +116,54 @@
         </div>
       </div>
     </section>
+
+    <script>
+      var clickCount = 0;
+
+      document
+        .getElementById("bouton2")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Empêche le comportement par défaut du lien
+
+          // Rend l'élément salleferme visible
+          var salleferme = document.getElementById("salleferme");
+          var salleencoreferme = document.getElementById("salleencoreferme");
+          var image = document.getElementById("bouton2-image");
+
+          setTimeout(function () {
+            image.classList.add("shake-animation");
+          }, 10);
+
+          image.classList.remove("shake-animation");
+
+          if (clickCount === 0) {
+            image.setAttribute("src", "assets/croix.jpg");
+
+            salleferme.style.display = "block";
+
+            setTimeout(function () {
+              salleferme.style.animation = "";
+            }, 10);
+
+            // Après un délai de 3 secondes, déclenche l'animation pour faire disparaître le texte
+            setTimeout(function () {
+              salleferme.style.animation = "slideUp 0.5s ease-out forwards";
+            }, 3000);
+          } else {
+            // Clics suivants : affiche salleencoreferme
+            salleencoreferme.style.display = "block";
+
+            setTimeout(function () {
+              salleencoreferme.style.animation = "";
+            }, 10);
+
+            setTimeout(function () {
+              salleencoreferme.style.animation =
+                "slideUp 0.5s ease-out forwards";
+            }, 3000);
+          }
+          clickCount++;
+        });
+    </script>
   </body>
 </html>
