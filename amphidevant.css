@@ -24,3 +24,29 @@
   top: 300px;
   right: 220px;
 }
+
+#linus,
+#olympe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.image-perso {
+  height: 350px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 5px #a7a7a7;
+}
+
+#linus-img {
+  margin-left: 10px;
+}
+
+#olympe-img {
+  margin-right: 10px;
+}
+
+#info {
+  width: 70%;
+}
