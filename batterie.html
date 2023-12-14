@@ -54,7 +54,6 @@
           id="boutonretour-image"
         />
       </a>
-      <!-- TODO faire la partie JS qui lance les sons -->
       <button id="caisse1" onclick="lancerSon(0)"></button>
       <button id="caisse2" onclick="lancerSon(1)"></button>
       <button id="caisse3" onclick="lancerSon(2)"></button>
@@ -63,6 +62,27 @@
       <button id="cymbale2" onclick="lancerSon(5)"></button>
       <button id="cymbale3" onclick="lancerSon(6)"></button>
       <a href="#info" class="boutoninfo">Comment jouer ?</a>
+    </section>
+
+    <div id="barre"></div>
+    <section id="ancreinfo" class="infoflex">
+      <div id="info" class="info">
+        <h2>Jouez donc de la batterie !</h2>
+        <p>
+          Cliquez sur les différents éléments de la batterie pour jouer un son.
+          <br />
+          Vous pouvez aussi utiliser votre clavier avec les touches suivantes :
+          <br />
+          <br />
+          Q : Caisse claire <br />
+          S : Tom alto <br />
+          D : Tom médium <br />
+          F : Tom basse <br />
+          G : Hit-Hat <br />
+          H : Crash <br />
+          J : Ride <br />
+        </p>
+      </div>
     </section>
     <script>
       // Créez un tableau avec les objets Audio pour chaque son
@@ -78,8 +98,35 @@
 
       // Créez une fonction qui joue le son correspondant à l'index
       function lancerSon(index) {
+        sons[index].currentTime = 0;
         sons[index].play();
       }
+
+      window.addEventListener("keydown", function (e) {
+        switch (e.key) {
+          case "q":
+            lancerSon(0);
+            break;
+          case "s":
+            lancerSon(1);
+            break;
+          case "d":
+            lancerSon(2);
+            break;
+          case "f":
+            lancerSon(3);
+            break;
+          case "g":
+            lancerSon(4);
+            break;
+          case "h":
+            lancerSon(5);
+            break;
+          case "j":
+            lancerSon(6);
+            break;
+        }
+      });
     </script>
   </body>
 </html>

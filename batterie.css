@@ -3,8 +3,7 @@
 }
 
 button {
-  /* opacity: 0; */
-  border: 6px solid red;
+  opacity: 0;
   background-color: transparent;
   position: absolute;
   height: 100px;

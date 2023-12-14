@@ -3,6 +3,48 @@
   background-position: bottom;
 }
 
-button {
+.flexbouton button {
+  background: linear-gradient(
+    90deg,
+    rgba(51, 153, 204, 1) 0%,
+    rgba(31, 102, 153, 1) 100%
+  );
+  border: none;
+  border-radius: 35px;
+  font-size: 35px;
+  color: white;
+  padding: 10px 20px;
+  transition: 0.2s ease-in-out;
+  width: 35%;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px 5px #2b2b2b6c;
+}
+
+.flexbouton {
   position: absolute;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#visite p {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  border-radius: 55px;
+  box-shadow: 0 0 20px 5px #a7a7a79a;
+  padding: 15px;
+  background-color: #fff;
 }

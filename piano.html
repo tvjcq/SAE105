@@ -54,9 +54,56 @@
           id="boutonretour-image"
         />
       </a>
-      <!-- TODO faire la partie JS qui lance les sons -->
-      <button>lancer sons</button>
+      <p>Vous souhaitez jouer quel son ?</p>
+      <div class="flexbouton">
+        <button id="son1">La lettre à Elise</button>
+        <button id="son2">La marche Turque</button>
+        <button id="son3">Moonlight Sonata</button>
+        <button id="son4">La valse d'Amélie</button>
+      </div>
       <a href="#info" class="boutoninfo">Comment jouer ?</a>
     </section>
+
+    <div id="barre"></div>
+    <section id="ancreinfo" class="infoflex">
+      <div id="info" class="info">
+        <h2>Vous êtes un pro !</h2>
+        <p>
+          Ça y est ! Après avoir joué du piano pendant 2 ans, vous êtes devenu
+          un pro ! Vous ne savez que jouer ces 4 morceaux, mais vous les jouez à
+          la perfection ! Vous êtes un vrai virtuose !
+        </p>
+      </div>
+    </section>
+
+    <audio id="audio1" src="assets/lettreelise.mp3"></audio>
+    <audio id="audio2" src="assets/marcheturque.mp3"></audio>
+    <audio id="audio3" src="assets/moonlight.mp3"></audio>
+    <audio id="audio4" src="assets/valseamelie.mp3"></audio>
+    <script>
+      let currentAudio = null;
+
+      document
+        .querySelectorAll(".flexbouton button")
+        .forEach((button, index) => {
+          button.addEventListener("click", () => {
+            const audio = document.getElementById(`audio${index + 1}`);
+
+            if (currentAudio && currentAudio !== audio) {
+              currentAudio.pause();
+              currentAudio.currentTime = 0;
+            }
+
+            if (audio.paused) {
+              audio.play();
+            } else {
+              audio.pause();
+              audio.currentTime = 0;
+            }
+
+            currentAudio = audio;
+          });
+        });
+    </script>
   </body>
 </html>

@@ -77,7 +77,6 @@ h1 {
 }
 
 .bouton-image {
-  /* border: 1px red solid; ! A supprimer au final */
   opacity: 0.8;
   transition: 0.2s ease-in-out;
 }
