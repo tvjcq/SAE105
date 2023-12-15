@@ -3,9 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylecommun.css" />
-    <link rel="stylesheet" href="ecranordi.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Visite de l'IUT de Béziers</title>
+    <link rel="shortcut icon" href="assets/logosite.jpg" type="image/x-icon" />
+    <style>
+      #visite {
+        background-image: url(assets/ecranordi.png);
+      }
+
+      #flexarea {
+        position: absolute;
+        top: 230px;
+        left: 600px;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 400px;
+      }
+
+      #flexarea a {
+        border-radius: 5px;
+        margin: 20px;
+      }
+
+      #flexarea a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      #flexarea a img {
+        height: 100px;
+        width: 100px;
+        margin: 20px;
+        border-radius: 15px;
+        transition: 0.2s ease-in-out;
+      }
+    </style>
   </head>
   <body>
     <a href="index.html" class="lien-accueil">
@@ -55,17 +90,15 @@
         />
       </a>
       <div id="flexarea">
-        <a href="composer.html" target="_blank"
-          ><img src="assets/flstudio.png" alt="" />
+        <a href="composer.html"> <img src="assets/flstudio.png" alt="" /> </a>
+        <a href="https://open.spotify.com/intl-fr" target="_blank">
+          <img src="assets/spotify.webp" alt="" />
         </a>
-        <a href="https://open.spotify.com/intl-fr"
-          ><img src="assets/spotify.webp" alt="" />
+        <a href="https://www.youtube.com/" target="_blank">
+          <img src="assets/logoyoutube.jpg" alt="" />
         </a>
-        <a href="https://www.youtube.com/"
-          ><img src="assets/logoyoutube.jpg" alt="" />
-        </a>
-        <a href="https://www.deezer.com/fr/"
-          ><img src="assets/deezer.png" alt="" />
+        <a href="https://www.deezer.com/fr/" target="_blank">
+          <img src="assets/deezer.png" alt="" />
         </a>
       </div>
 

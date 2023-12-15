@@ -3,9 +3,159 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylecommun.css" />
-    <link rel="stylesheet" href="jeuadam.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Visite de l'IUT de Béziers</title>
+    <link rel="shortcut icon" href="assets/logosite.jpg" type="image/x-icon" />
+    <style>
+      #visite {
+        background-image: url(assets/adam.png);
+        background-position: bottom;
+        height: 900px;
+        overflow: hidden;
+      }
+
+      #commencer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.3);
+        z-index: 2;
+        background: linear-gradient(
+          90deg,
+          rgba(51, 153, 204, 1) 0%,
+          rgba(31, 102, 153, 1) 100%
+        );
+        border: none;
+        border-radius: 35px;
+        font-size: 35px;
+        color: white;
+        padding: 10px 20px;
+        transition: 0.2s ease-in-out;
+      }
+
+      #commencer:hover {
+        transform: translate(-50%, -50%) scale(1.4);
+        box-shadow: 0 0 10px 5px #9999996c;
+      }
+
+      #jeu {
+        position: absolute;
+        top: 50%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        border: 5px solid #252525;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 25px;
+        height: 500px;
+        width: 500px;
+        z-index: 2;
+      }
+
+      #fin {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: #fff;
+        padding-bottom: 35px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 25px;
+        box-shadow: 0 0 10px 5px #9999996c;
+        z-index: 2;
+      }
+
+      #fin p {
+        font-size: 50px;
+      }
+
+      #fin span {
+        font-size: 70px;
+        font-weight: bold;
+      }
+
+      #fin button {
+        background: linear-gradient(
+          90deg,
+          rgba(51, 153, 204, 1) 0%,
+          rgba(31, 102, 153, 1) 100%
+        );
+        border: none;
+        border-radius: 35px;
+        font-size: 35px;
+        color: white;
+        padding: 10px 20px;
+        transition: 0.2s ease-in-out;
+        z-index: 2;
+      }
+
+      #fin button:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+        box-shadow: 0 0 10px 5px #9999996c;
+      }
+
+      #jeu {
+        font-size: 50px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      #timer {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 50px;
+        background-color: #fff;
+        border-radius: 50px;
+        padding: 10px 20px;
+        visibility: hidden;
+      }
+
+      #partage {
+        font-size: 35px !important;
+      }
+
+      .dessin {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        visibility: hidden;
+      }
+
+      #tcheck1 {
+        top: 100%;
+        left: 250px;
+        height: 600px;
+        visibility: visible;
+        rotate: 45deg;
+        z-index: 0;
+      }
+
+      #tcheck2 {
+        top: 70%;
+        left: 150px;
+        height: 600px;
+        rotate: -20deg;
+        visibility: visible;
+      }
+
+      #clack {
+        position: absolute;
+        top: 70%;
+        left: 400px;
+        height: 300px;
+        visibility: visible;
+      }
+    </style>
   </head>
   <body>
     <a href="index.html" class="lien-accueil">
@@ -67,6 +217,10 @@
         </p>
       </div>
 
+      <img class="dessin" id="tcheck1" src="assets/tcheck.png" alt="" />
+      <img class="dessin" id="tcheck2" src="assets/tcheck.png" alt="" />
+      <img class="dessin" id="clack" src="assets/clack.png" alt="" />
+
       <a href="#info" class="boutoninfo">Comment jouer ?</a>
     </section>
 
@@ -84,7 +238,6 @@
     </section>
 
     <script>
-      // Sélection des éléments
       const commencerButton = document.getElementById("commencer");
       const jeuButton = document.getElementById("jeu");
       const finDiv = document.getElementById("fin");
@@ -93,25 +246,28 @@
       const retourButton = document.getElementById("boutonretour");
       const timerP = document.getElementById("timer");
       const messageP = document.getElementById("message");
+      const tcheck1 = document.getElementById("tcheck1");
+      const tcheck2 = document.getElementById("tcheck2");
+      const clack = document.getElementById("clack");
+      const clickSound = new Audio("assets/slap.mp3");
+
+      tcheck1.style.display = "none";
+      tcheck2.style.display = "none";
+      clack.style.display = "none";
 
       let score = 0;
       let timer;
 
-      // Cacher le bouton jeu et la div fin au début
       jeuButton.style.display = "none";
       finDiv.style.display = "none";
 
-      // Gérer le clic sur le bouton commencer
       commencerButton.addEventListener("click", function () {
-        // Cacher le bouton commencer
         commencerButton.style.display = "none";
         retourButton.style.display = "none";
 
-        // Réinitialiser le score
         score = 0;
         scoreSpan.textContent = score;
 
-        // Démarrer le décompte de 3 secondes
         let countdown = 3;
         jeuButton.style.display = "block";
         const countdownInterval = setInterval(function () {
@@ -121,29 +277,44 @@
             clearInterval(countdownInterval);
             timerP.style.visibility = "visible";
 
-            // Montrer le bouton jeu
             jeuButton.textContent = score;
 
-            // Gérer le clic sur le bouton jeu
             const incrementScore = function () {
               score += 1;
               scoreSpan.textContent = score;
-              jeuButton.textContent = score; // Afficher le score dans le bouton
-            };
-            jeuButton.addEventListener("click", incrementScore);
+              jeuButton.textContent = score;
+              clickSound.currentTime = 0;
+              clickSound.play();
 
-            // Gérer la touche espace
+              tcheck1.style.display = "none";
+              tcheck2.style.display = "block";
+              clack.style.display = "block";
+            };
+            jeuButton.addEventListener("mousedown", incrementScore);
+
+            jeuButton.addEventListener("mouseup", function () {
+              tcheck1.style.display = "block";
+              tcheck2.style.display = "none";
+              clack.style.display = "none";
+            });
+
             const handleSpace = function (event) {
-              if (
-                event.code === "Space" &&
-                document.activeElement !== jeuButton
-              ) {
+              if (event.code === "Space" && event.repeat === false) {
                 incrementScore();
               }
+              clickSound.currentTime = 0;
+              clickSound.play();
             };
-            window.addEventListener("keyup", handleSpace);
+            window.addEventListener("keydown", handleSpace);
 
-            // Démarrer le timer de 10 secondes
+            window.addEventListener("keyup", function (event) {
+              if (event.code === "Space") {
+                tcheck1.style.display = "block";
+                tcheck2.style.display = "none";
+                clack.style.display = "none";
+              }
+            });
+
             let remainingTime = 10;
             timerP.textContent = "Temps restant : " + remainingTime + "s";
             timer = setInterval(function () {
@@ -155,12 +326,16 @@
                 finDiv.style.display = "block";
                 retourButton.style.display = "block";
                 timerP.style.visibility = "hidden";
-                // Arrêter le timer
-                clearInterval(timer);
+                tcheck1.style.display = "none";
+                tcheck2.style.display = "none";
+                clack.style.display = "none";
 
-                // Supprimer les écouteurs d'événements
-                jeuButton.removeEventListener("click", incrementScore);
+                jeuButton.removeEventListener("mouseup", incrementScore);
+                jeuButton.removeEventListener("mousedown", incrementScore);
+                window.removeEventListener("keydown", handleSpace);
                 window.removeEventListener("keyup", handleSpace);
+
+                clearInterval(timer);
 
                 if (score < 10) {
                   messageP.textContent = "Vous avez jouez au moins ?";
@@ -195,11 +370,9 @@
       });
 
       document.getElementById("restart").addEventListener("click", function () {
-        // Cacher la div fin et montrer le bouton commencer
         finDiv.style.display = "none";
         commencerButton.style.display = "block";
 
-        // Arrêter le timer
         clearInterval(timer);
       });
     </script>
