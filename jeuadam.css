@@ -1,0 +1,115 @@
+#visite {
+  background-image: url(assets/adam.png);
+  background-position: bottom;
+  height: 900px;
+}
+
+#commencer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.3);
+  z-index: 2;
+
+  background: linear-gradient(
+    90deg,
+    rgba(51, 153, 204, 1) 0%,
+    rgba(31, 102, 153, 1) 100%
+  );
+  border: none;
+  border-radius: 35px;
+  font-size: 35px;
+  color: white;
+  padding: 10px 20px;
+  transition: 0.2s ease-in-out;
+  /* visibility: hidden; */
+}
+
+#commencer:hover {
+  transform: translate(-50%, -50%) scale(1.4);
+  box-shadow: 0 0 10px 5px #9999996c;
+}
+
+#jeu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #252525;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  height: 500px;
+  width: 500px;
+}
+
+#fin {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #fff;
+  padding-bottom: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25px;
+  box-shadow: 0 0 10px 5px #9999996c;
+}
+
+#fin p {
+  font-size: 50px;
+}
+
+#fin span {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+#fin button {
+  background: linear-gradient(
+    90deg,
+    rgba(51, 153, 204, 1) 0%,
+    rgba(31, 102, 153, 1) 100%
+  );
+  border: none;
+  border-radius: 35px;
+  font-size: 35px;
+  color: white;
+  padding: 10px 20px;
+  transition: 0.2s ease-in-out;
+}
+
+#fin button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 0 0 10px 5px #9999996c;
+}
+
+#jeu {
+  font-size: 50px;
+}
+
+button {
+  cursor: pointer;
+}
+
+#timer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 50px;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  visibility: hidden;
+}
+
+#partage {
+  font-size: 35px !important;
+}
